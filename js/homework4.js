@@ -1,5 +1,5 @@
 let transformNumToObj = (num) => {
-  if (num > 999 | num < 0) {
+  if ((num > 999) | (num < 0)) {
     console.log('incorrect number');
     return {};
   }
@@ -11,7 +11,8 @@ let transformNumToObj = (num) => {
   return {
     единицы: ones,
     десятки: dozens,
-    сотни: hundereds
-  }
+    сотни: hundereds,
+  };
 };
-console.log(transformNumToObj(937));
+number = parseInt(prompt('Введите число:'));
+console.log(transformNumToObj(number));
