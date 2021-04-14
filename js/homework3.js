@@ -54,10 +54,6 @@ console.log('ЗАДАНИЕ НОМЕР ДВА: ' + countBasketPrice());
 for (let i = 0; i < 10; console.log(i++));
 
 //5
-for (let i = 0; i < 20; i++) {
-  let row = '';
-  for (let j = 0; j <= i; j++) {
-    row += 'x';
-  }
+for (let row = ''; row.length <= 20; row += 'x') {
   console.log(row);
 }
