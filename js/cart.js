@@ -1,16 +1,18 @@
-let calculateRowPrice = (row, totalPriceCents = 0) => {
+let calculateRowPrice = (row) => {
   let priceElement = row.querySelector('.cart-price');
   let quantityElement = row.querySelector('.cart-quantity-input');
   let priceCents = parseInt(priceElement.innerText.replace('$', '').replace('.', ''));
   let quantity = quantityElement.value;
-  totalPriceCents += priceCents * quantity;
-  return totalPriceCents;
+  let rowPriceCents = 0;
+  rowPriceCents += priceCents * quantity;
+  console.log(row, rowPriceCents);
+  return rowPriceCents;
 };
 
 let updateCartTotal = () => {
   let totalPriceCents = 0;
   let cartRows = document.querySelectorAll('.cart-items > .cart-row');
-  cartRows.forEach(row => totalPriceCents += calculateRowPrice(row, totalPriceCents));
+  cartRows.forEach(row => totalPriceCents += calculateRowPrice(row));
   let totalPrice = (totalPriceCents / 100).toFixed(2);
   document.querySelector('.cart-total-price').innerText = `$${totalPrice}`;
 };
